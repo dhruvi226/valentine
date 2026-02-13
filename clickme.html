@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Will You Be My Valentine?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      font-family: Arial, sans-serif;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      max-width: 360px;
+      width: 90%;
+    }
+
+    h1 {
+      color: #e63946;
+    }
+
+    .buttons {
+      margin-top: 20px;
+      position: relative;
+      height: 140px;
+    }
+
+    button {
+      padding: 12px 22px;
+      font-size: 16px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+
+    #yesBtn {
+      background: #e63946;
+      color: white;
+    }
+
+    #noBtn {
+      background: #adb5bd;
+      color: white;
+      position: absolute;
+      left: 120px;
+      top: 60px;
+    }
+
+    #yesMessage {
+      display: none;
+      font-size: 18px;
+      color: #2a9d8f;
+      margin-top: 20px;
+    }
+
+    #noMessage {
+      display: none;
+      font-size: 14px;
+      color: #e63946;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Hello Bhalli, Will you be my Valentine? 💕</h1>
+
+    <div class="buttons">
+      <button id="yesBtn" onclick="sayYes()">Yes 💖</button>
+      <button id="noBtn" onmouseover="moveNo()">No 🙈</button>
+    </div>
+
+    <div id="noMessage">❌ No option for No in this life. Better luck for next life 😄🙈</div>
+
+    <div id="yesMessage">
+      Yayyyy!!! 🥰❤️  
+      I love you forever 💑
+    </div>
+  </div>
+
+  <script>
+    function moveNo() {
+      const noBtn = document.getElementById("noBtn");
+      const noMsg = document.getElementById("noMessage");
+
+      const x = Math.random() * 200 - 100;
+      const y = Math.random() * 80;
+
+      noBtn.style.transform = `translate(${x}px, ${y}px)`;
+      noMsg.style.display = "block";
+    }
+
+    function sayYes() {
+      document.getElementById("yesMessage").style.display = "block";
+      document.getElementById("noMessage").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
